@@ -150,6 +150,23 @@ public class Picture extends SimplePicture
         }
     }
 
+    public void mirrorHorizontalBotToTop()
+    {
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+        int height = pixels.length;
+        for (int row = height/2; row < height; row++)
+        {
+            for (int col = 0; col < pixels[0].length ; col++)
+            {
+                leftPixel = pixels[row][col];
+                rightPixel = pixels[height - 1 - row][col];
+                rightPixel.setColor(leftPixel.getColor());
+            }
+        }
+    }
+    
     public void mirrorHorizontally()
     {
         Pixel[][] pixels = this.getPixels2D();
@@ -158,13 +175,25 @@ public class Picture extends SimplePicture
         int height = pixels.length;
         for (int row = 0; row < height/2; row++)
         {
-            for (int col = 0; col < pixels.length; col++)
+            for (int col = 0; col < pixels[0].length ; col++)
             {
                 leftPixel = pixels[row][col];
-                rightPixel = pixels[row][height - 1 - col];
+                rightPixel = pixels[height - 1 - row][col];
                 rightPixel.setColor(leftPixel.getColor());
             }
-        }         
+        }
+    }
+    
+    public void mirrorDiagonal()
+    {
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel leftSide = null;
+        Pixel rightSide = null;
+        int side = pixels[0].length;
+        for (int row = 0; row < side; i++)
+        {
+            
+        }
     }
 
     /** Mirror just part of a picture of a temple */
