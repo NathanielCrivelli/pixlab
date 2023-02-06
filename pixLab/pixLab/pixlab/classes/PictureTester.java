@@ -85,11 +85,11 @@ public class PictureTester
     temple.explore();
   }
   
-  public static void testMirror()
+  public static void testMirrorGull()
   {
       Picture gull = new Picture("seagull.jpg");
       gull.explore();
-      gull.mirrorArms();
+      gull.mirrorGull();
       gull.explore();
   }
   
@@ -127,13 +127,14 @@ public class PictureTester
     //testMirrorHorizontally();
     //testMirrorHorizontalBotToTop();
     //testMirrorDiagonal();
-    testMirrorArms();
+    //testMirrorArms();
+    //testMirrorGull();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+    testCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();

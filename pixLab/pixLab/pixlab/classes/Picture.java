@@ -249,22 +249,22 @@ public class Picture extends SimplePicture
     
     public void mirrorGull()
     {
-        int mirrorPoint = 276;
+        int mirrorPoint = 230;
         Pixel leftPixel = null;
         Pixel rightPixel = null;
         int count = 0;
         Pixel[][] pixels = this.getPixels2D();
 
         // loop through the rows
-        for (int row = 27; row < 97; row++)
+        for (int row = 225; row < 320; row++)
         {
             // loop from 13 to just before the mirror point
             for (int col = 13; col < mirrorPoint; col++)
             {
 
-                leftPixel = pixels[row][col];      
+                leftPixel = pixels[row][mirrorPoint - col + mirrorPoint];      
                 rightPixel = pixels[row]                       
-                [mirrorPoint - col + mirrorPoint];
+                [col];
                 rightPixel.setColor(leftPixel.getColor());
             }
         }
@@ -306,15 +306,16 @@ public class Picture extends SimplePicture
     {
         Picture flower1 = new Picture("flower1.jpg");
         Picture flower2 = new Picture("flower2.jpg");
-        this.copy(flower1,0,0);
-        this.copy(flower2,100,0);
-        this.copy(flower1,200,0);
-        Picture flowerNoBlue = new Picture(flower2);
-        flowerNoBlue.zeroBlue();
-        this.copy(flowerNoBlue,300,0);
-        this.copy(flower1,400,0);
-        this.copy(flower2,500,0);
-        this.mirrorVertical();
+        Picture mark1 = new Picture("blue-mark.jpg");
+        Picture temple = new Picture("snowman.jpg");
+        this.copy(mark1, 0, 0);
+        this.copy(temple,0,0);
+        this.copy(flower1,390,0);
+        this.copy(flower2,390,110);
+        this.copy(flower1,390,220);
+        this.copy(flower2,390,330);
+        this.copy(flower1,390,440);
+        this.copy(flower2,390,550);
         this.write("collage.jpg");
     }
 
