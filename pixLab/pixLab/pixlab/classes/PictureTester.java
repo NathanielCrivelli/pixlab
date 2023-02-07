@@ -27,6 +27,14 @@ public class PictureTester
       beach.explore();
   }
   
+  public static void testBottomHalfBlue()
+  {
+      Picture beach = new Picture("images/beach.jpg");
+      beach.explore();
+      beach.setBlueToHalfValueInBottomHalf();
+      beach.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -105,8 +113,24 @@ public class PictureTester
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
+    swan.explore();
     swan.edgeDetection(10);
     swan.explore();
+  }
+  
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("swan.jpg");
+    swan.explore();
+    swan.edgeDetection2(10);
+    swan.explore();
+  }
+  
+  public static void testGetGreenCount()
+  {
+      Picture gull = new Picture("seagull.jpg");
+      gull.explore();
+      System.out.println(gull.getCountGreenOverValue(50));
   }
   
   /** Main method for testing.  Every class can have a main
@@ -134,7 +158,9 @@ public class PictureTester
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    testCollage();
+    //testCollage();
+    //testBottomHalfBlue();
+    testGetGreenCount();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
